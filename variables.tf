@@ -32,14 +32,6 @@ variable "zones" {
   description = "The zones to create the cluster."
 }
 
-variable "network" {
-  description = "The VPC network to host the cluster in"
-}
-
-variable "subnetwork" {
-  description = "The subnetwork to host the cluster in"
-}
-
 variable "ip_range_pods" {
   description = "The secondary ip range to use for pods"
 }
