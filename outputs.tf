@@ -1,9 +1,3 @@
-output "kubernetes_endpoint" {
-  description = "The cluster endpoint"
-  sensitive   = true
-  value       = module.gke.endpoint
-}
-
 output "cluster_name" {
   description = "Cluster name"
   value       = module.gke.name
@@ -26,11 +20,6 @@ output "service_account" {
 output "region" {
   description = "The region in which the cluster resides"
   value       = module.gke.region
-}
-
-output "zones" {
-  description = "List of zones in which the cluster resides"
-  value       = module.gke.zones
 }
 
 output "project_id" {
