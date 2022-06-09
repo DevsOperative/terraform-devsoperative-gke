@@ -12,11 +12,6 @@ output "master_kubernetes_version" {
   value       = module.gke.master_version
 }
 
-output "service_account" {
-  description = "The service account to default running nodes as if not overridden in `node_pools`."
-  value       = module.gke.service_account
-}
-
 output "region" {
   description = "The region in which the cluster resides"
   value       = module.gke.region
