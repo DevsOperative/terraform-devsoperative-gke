@@ -58,6 +58,7 @@ variable "enable_binary_authorization" {
 variable "machine_type" {
   type        = string
   description = "Type of the node compute engines."
+  default = "n1-standard-2"
 }
 
 variable "min_count" {
