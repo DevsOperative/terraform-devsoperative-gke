@@ -33,8 +33,8 @@ module "gke" {
   ip_range_services               = var.ip_range_services
   create_service_account          = false
   service_account                 = var.service_account
-  kubernetes_version              = "latest"
-  release_channel                 = "RAPID"
+  kubernetes_version              = "v1.21"
+  release_channel                 = "STABLE"
   horizontal_pod_autoscaling      = true
   enable_vertical_pod_autoscaling = true
   remove_default_node_pool        = true
