@@ -33,8 +33,7 @@ module "gke" {
   ip_range_services               = var.ip_range_services
   create_service_account          = false
   service_account                 = var.service_account
-  master_kubernetes_version       = "1.21.14-gke.14600"
-  kubernetes_version       = "1.21.14-gke.14600"
+  kubernetes_version              = "1.21.14-gke.14600"
   release_channel                 = "STABLE"
   horizontal_pod_autoscaling      = true
   enable_vertical_pod_autoscaling = true
