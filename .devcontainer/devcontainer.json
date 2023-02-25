@@ -1,0 +1,11 @@
+{
+  "name": "terraform-codespaces",
+  "extensions": [
+    "ms-azuretools.vscode-docker",
+    "davidanson.vscode-markdownlint",
+    "hashicorp.terraform",
+    "redhat.vscode-yaml",
+    "ms-kubernetes-tools.vscode-kubernetes-tools"
+  ],
+  "postCreateCommand": "/bin/bash ./.devcontainer/post-install.sh"
+}
