@@ -1,5 +1,5 @@
 {
-  "name": "terraform-codespaces",
+  "name": "terraform-devspaces",
   "extensions": [
     "ms-azuretools.vscode-docker",
     "davidanson.vscode-markdownlint",
@@ -7,5 +7,9 @@
     "redhat.vscode-yaml",
     "ms-kubernetes-tools.vscode-kubernetes-tools"
   ],
-  "postCreateCommand": "/bin/bash ./.devcontainer/post-install.sh"
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",  // Any generic, debian-based image.
+  "features": {
+    "ghcr.io/devcontainers/features/terraform:1": {},
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {}
+  }
 }
