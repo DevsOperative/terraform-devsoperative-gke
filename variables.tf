@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 
+variable "github_token" {
+  description = "Token for ArgoCD to auth to GitHub"
+}
+
 variable "project_id" {
   description = "The project ID to host the cluster in"
 }
@@ -30,6 +34,15 @@ variable "region" {
 variable "zones" {
   type        = list(string)
   description = "The zones to create the cluster."
+}
+
+variable "kubernetes_version" {
+  description = "The initial version of GKE - If release_channel is supplied and auto update "
+}
+
+variable "release_channel" {
+  description = "Release channel for GKE"
+  default     = "STABLE"
 }
 
 variable "ip_range_pods" {
@@ -58,17 +71,18 @@ variable "enable_binary_authorization" {
 variable "machine_type" {
   type        = string
   description = "Type of the node compute engines."
-  default = "n1-standard-2"
 }
 
 variable "min_count" {
   type        = number
   description = "Minimum number of nodes in the NodePool. Must be >=0 and <= max_node_count."
+  default     = 2
 }
 
 variable "max_count" {
   type        = number
   description = "Maximum number of nodes in the NodePool. Must be >= min_node_count."
+  default     = 10
 }
 
 variable "disk_size_gb" {
@@ -79,4 +93,36 @@ variable "disk_size_gb" {
 variable "initial_node_count" {
   type        = number
   description = "The number of nodes to create in this cluster's default node pool."
+  default     = 2
+}
+
+variable "backup_cron_schedule" {
+  type    = string
+  default = "0 2 * * *"
+}
+
+variable "backup_delete_lock_days" {
+  type        = number
+  default     = 7
+  description = "Minimum number of days a backup will be stored"
+}
+
+variable "backup_retain_days" {
+  type        = number
+  default     = 60
+  description = "Maximum number of days a backup will be stored before being deleted"
+}
+
+variable "backup_region" {
+  type        = string
+  default     = "us-east1"
+  description = "What region the backups will be stored in"
+}
+
+variable "applicationset_name" {
+  type = string
+}
+
+variable "applicationset_org" {
+  type = string
 }
